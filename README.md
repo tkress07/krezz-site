@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krezz – Perfect Beard Stencil</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-white text-gray-900">
+  <!-- Header -->
+  <header class="flex justify-between items-center p-6 shadow">
+    <h1 class="text-2xl font-bold">Krezz</h1>
+    <nav class="space-x-4">
+      <a href="#how" class="hover:underline">How It Works</a>
+      <a href="#pricing" class="hover:underline">Pricing</a>
+      <a href="#waitlist" class="hover:underline">Join Waitlist</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="text-center py-20 px-6" id="hero">
+    <h2 class="text-4xl font-extrabold mb-4">Get the Perfect Beard Line. Every Time.</h2>
+    <p class="max-w-xl mx-auto text-lg mb-6">
+      Krezz lets you scan your face to generate a custom stencil that guarantees a precise edge up every time you shave.
+    </p>
+    <div class="space-x-4">
+      <a href="#waitlist" class="px-6 py-3 bg-black text-white rounded-2xl shadow inline-block">Join the Waitlist</a>
+      <button class="px-6 py-3 bg-gray-300 text-gray-600 rounded-2xl cursor-not-allowed" disabled>Download on iOS (Coming Soon)</button>
+    </div>
+    <div class="mt-10 bg-gray-100 h-64 rounded-xl flex items-center justify-center">
+      <span class="text-gray-500">[App Preview Image Here]</span>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how" class="py-20 px-6 bg-gray-50">
+    <h3 class="text-3xl font-bold text-center mb-12">How It Works</h3>
+    <div class="grid md:grid-cols-4 gap-8 text-center">
+      <div class="bg-white p-6 rounded-xl shadow">
+        <div class="text-2xl font-bold mb-2">Step 1</div>
+        <div class="text-lg">Scan Face</div>
+        <div class="mt-4 text-gray-400">[Image Placeholder]</div>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow">
+        <div class="text-2xl font-bold mb-2">Step 2</div>
+        <div class="text-lg">Select Beard Style</div>
+        <div class="mt-4 text-gray-400">[Image Placeholder]</div>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow">
+        <div class="text-2xl font-bold mb-2">Step 3</div>
+        <div class="text-lg">Generate STL</div>
+        <div class="mt-4 text-gray-400">[Image Placeholder]</div>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow">
+        <div class="text-2xl font-bold mb-2">Step 4</div>
+        <div class="text-lg">3D Print or Order</div>
+        <div class="mt-4 text-gray-400">[Image Placeholder]</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Krezz -->
+  <section class="py-20 px-6">
+    <h3 class="text-3xl font-bold text-center mb-12">Why Krezz?</h3>
+    <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div class="bg-gray-100 p-6 rounded-xl">Custom-fit stencil using your face scan</div>
+      <div class="bg-gray-100 p-6 rounded-xl">No more scheduling barbers</div>
+      <div class="bg-gray-100 p-6 rounded-xl">Never mess up your beard line again</div>
+      <div class="bg-gray-100 p-6 rounded-xl">Look sharp, consistently, every time</div>
+    </div>
+  </section>
+
+  <!-- Product Preview Placeholder -->
+  <section class="py-20 px-6 bg-gray-50">
+    <h3 class="text-3xl font-bold text-center mb-6">Your Beard. Engineered.</h3>
+    <div class="bg-white h-72 rounded-xl shadow flex items-center justify-center">
+      <span class="text-gray-400">[3D Render Placeholder]</span>
+    </div>
+  </section>
+
+  <!-- Join Waitlist -->
+  <section id="waitlist" class="py-20 px-6 text-center">
+    <h3 class="text-3xl font-bold mb-4">Be the First to Get Krezz</h3>
+    <p class="text-lg mb-6">Enter your email to get notified when we launch and secure your early access.</p>
+    <form action="mailto:hello@yourdomain.com" method="POST">
+      <input type="email" placeholder="Your email" required class="px-4 py-2 rounded-l-lg border border-gray-300 w-64">
+      <button type="submit" class="px-6 py-2 bg-black text-white rounded-r-lg">Join Waitlist</button>
+    </form>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="py-20 px-6 bg-gray-50">
+    <h3 class="text-3xl font-bold text-center mb-12">Pricing</h3>
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto text-center">
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h4 class="text-xl font-bold mb-2">STL File</h4>
+        <p class="mb-4">Download your custom stencil file.</p>
+        <p class="font-semibold">$XX (one-time)</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h4 class="text-xl font-bold mb-2">Shipped Stencil</h4>
+        <p class="mb-4">Get a ready-made tool delivered.</p>
+        <p class="font-semibold">$YY + shipping</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-10 text-sm text-gray-500">
+    <p>&copy; 2025 Krezz. All rights reserved.</p>
+    <div class="space-x-4 mt-2">
+      <a href="#" class="hover:underline">Privacy Policy</a>
+      <a href="#" class="hover:underline">Contact</a>
+    </div>
+  </footer>
+</body>
+</html>
