@@ -7,7 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <style>
     body {
-      background-color: #000; /* deep black background */
+      background-color: #000;
     }
     .gold {
       color: #FFD700;
@@ -41,19 +41,20 @@
     <p class="max-w-xl mx-auto text-lg mb-6 text-yellow-300">
       Krezz lets you scan your face to generate a custom stencil that guarantees a precise edge up every time you shave.
     </p>
+
     <div class="space-x-4">
       <a href="#waitlist" class="px-6 py-3 bg-gold text-black font-bold rounded-2xl shadow inline-block hover-gold transition">Join the Waitlist</a>
       <button class="px-6 py-3 bg-gray-700 text-gray-300 rounded-2xl cursor-not-allowed" disabled>Download on iOS (Coming Soon)</button>
     </div>
-    <div class="mt-10 flex justify-center">
-  <div class="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl border border-gold rounded-xl overflow-hidden">
-    <video controls autoplay muted loop playsinline class="w-full h-auto rounded-xl">
-      <source src="app-preview4.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </div>
-</div>
 
+    <div class="mt-10 flex justify-center">
+      <div class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg border border-gold rounded-xl overflow-hidden">
+        <video controls autoplay muted loop playsinline class="w-full h-auto rounded-xl">
+          <source src="app-preview4.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
   </section>
 
   <!-- How It Works -->
@@ -63,22 +64,18 @@
       <div class="bg-black p-6 rounded-xl shadow border border-gold">
         <div class="text-2xl font-bold text-yellow-300 mb-2">Step 1</div>
         <div class="text-lg">Scan Face</div>
-        <div class="mt-4 text-yellow-500">[Image Placeholder]</div>
       </div>
       <div class="bg-black p-6 rounded-xl shadow border border-gold">
         <div class="text-2xl font-bold text-yellow-300 mb-2">Step 2</div>
         <div class="text-lg">Select Beard Style</div>
-        <div class="mt-4 text-yellow-500">[Image Placeholder]</div>
       </div>
       <div class="bg-black p-6 rounded-xl shadow border border-gold">
         <div class="text-2xl font-bold text-yellow-300 mb-2">Step 3</div>
-        <div class="text-lg">Generate STL</div>
-        <div class="mt-4 text-yellow-500">[Image Placeholder]</div>
+        <div class="text-lg">Generate Custom Fit</div>
       </div>
       <div class="bg-black p-6 rounded-xl shadow border border-gold">
         <div class="text-2xl font-bold text-yellow-300 mb-2">Step 4</div>
-        <div class="text-lg">3D Print or Order</div>
-        <div class="mt-4 text-yellow-500">[Image Placeholder]</div>
+        <div class="text-lg">Order Your Stencil</div>
       </div>
     </div>
   </section>
@@ -94,19 +91,12 @@
     </div>
   </section>
 
-  <!-- 3D Render Preview -->
-  <section class="py-20 px-6">
-    <h3 class="text-3xl font-bold text-center mb-6 gold">Your Beard. Engineered.</h3>
-    <div class="bg-black h-72 rounded-xl shadow flex items-center justify-center border border-gold">
-      <img src="images/beard-preview.png" alt="3D Render" class="h-56" />
-    </div>
-  </section>
-
   <!-- Waitlist -->
   <section id="waitlist" class="py-20 px-6 text-center">
     <h3 class="text-3xl font-bold mb-4 gold">Be the First to Get Krezz</h3>
     <p class="text-lg mb-6 text-yellow-200">Enter your email to get notified when we launch and secure your early access.</p>
-<form action="mailto:krezzcut@gmail.com" method="POST" class="flex justify-center flex-wrap gap-2">      <input type="email" placeholder="Your email" required class="px-4 py-2 rounded-l-lg border border-gold w-64 text-black" />
+    <form action="mailto:krezzcut@gmail.com" method="POST" class="flex justify-center flex-wrap gap-2">
+      <input type="email" placeholder="Your email" required class="px-4 py-2 rounded-l-lg border border-gold w-64 text-black" />
       <button type="submit" class="px-6 py-2 bg-gold text-black font-bold rounded-r-lg hover-gold transition">Join Waitlist</button>
     </form>
   </section>
@@ -114,15 +104,10 @@
   <!-- Pricing -->
   <section id="pricing" class="py-20 px-6">
     <h3 class="text-3xl font-bold text-center mb-12 gold">Pricing</h3>
-    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto text-center">
-      <div class="bg-black p-6 rounded-xl shadow border border-gold">
-        <h4 class="text-xl font-bold mb-2 text-yellow-300">STL File</h4>
-        <p class="mb-4">Download your custom stencil file for self-printing.</p>
-        <p class="font-semibold text-white">$19.99 (one-time)</p>
-      </div>
-      <div class="bg-black p-6 rounded-xl shadow border border-gold">
+    <div class="max-w-2xl mx-auto text-center">
+      <div class="bg-black p-8 rounded-xl shadow border border-gold">
         <h4 class="text-xl font-bold mb-2 text-yellow-300">Shipped Stencil</h4>
-        <p class="mb-4">Get a ready-made tool delivered to your door.</p>
+        <p class="mb-4">Get a ready-made custom stencil delivered to your door.</p>
         <p class="font-semibold text-white">$49.99 + shipping</p>
       </div>
     </div>
@@ -134,10 +119,10 @@
       <img src="krezzcut_logo.png" alt="Krezz Logo" class="h-10" />
     </div>
     <p class="text-yellow-400 text-sm">&copy; 2025 Krezz. All rights reserved.</p>
-      <div class="space-x-4 text-sm mt-2">
-        <a href="privacy.html" class="text-yellow-400 hover:underline">Privacy Policy</a>
-        <a href="mailto:krezzcut@gmail.com" class="text-yellow-400 hover:underline">Contact</a>
-      </div>
+    <div class="space-x-4 text-sm mt-2">
+      <a href="privacy.html" class="text-yellow-400 hover:underline">Privacy Policy</a>
+      <a href="mailto:krezzcut@gmail.com" class="text-yellow-400 hover:underline">Contact</a>
+    </div>
   </footer>
 
 </body>
