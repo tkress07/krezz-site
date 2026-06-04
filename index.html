@@ -1,149 +1,273 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KrezzCut – Perfect Beard Stencil</title>
+  <title>KrezzCut – Custom Beard Mold App</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+
   <style>
     body {
-      background-color: #000;
+      background: radial-gradient(circle at top, #1a1400 0%, #000 45%, #000 100%);
     }
-    .gold {
-      color: #FFD700;
+
+    .gold { color: #FFD700; }
+    .bg-gold { background-color: #FFD700; }
+    .border-gold { border-color: #FFD700; }
+
+    .gold-glow {
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.55);
     }
-    .bg-gold {
-      background-color: #FFD700;
+
+    .hero-card {
+      background: linear-gradient(145deg, rgba(255,215,0,0.12), rgba(0,0,0,0.95));
+      border: 1px solid rgba(255,215,0,0.5);
     }
-    .border-gold {
-      border-color: #FFD700;
+
+    .download-pulse {
+      animation: pulseGlow 1.8s infinite;
     }
-    .hover-gold:hover {
-      background-color: #e6c200;
+
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 12px rgba(255,215,0,0.45); }
+      50% { box-shadow: 0 0 35px rgba(255,215,0,0.95); }
+      100% { box-shadow: 0 0 12px rgba(255,215,0,0.45); }
+    }
+
+    .sticky-download {
+      backdrop-filter: blur(12px);
+      background: rgba(0,0,0,0.92);
+    }
+
+    @media (min-width: 768px) {
+      .mobile-sticky { display: none; }
     }
   </style>
 </head>
-<body class="text-white">
+
+<body class="text-white pb-24 md:pb-0">
+
+  <!-- Top Promo Bar -->
+  <div class="bg-gold text-black text-center font-extrabold py-3 px-4">
+    Limited Launch Deal: Use Code <span class="underline">FIRSTCUT50%</span> for 50% Off Your First Mold
+  </div>
 
   <!-- Header -->
-  <header class="flex flex-col items-center text-center py-6 border-b border-gold">
-    <img src="krezzcut_logo.png" alt="KrezzCut Logo" class="h-16 mb-2" />
-    <nav class="space-x-6">
-      <a href="#how" class="text-yellow-400 hover:text-white transition">How It Works</a>
-      <a href="#pricing" class="text-yellow-400 hover:text-white transition">Pricing</a>
-      <a href="#download" class="text-yellow-400 hover:text-white transition">Download App</a>
+  <header class="flex flex-col md:flex-row justify-between items-center px-6 md:px-12 py-6 border-b border-yellow-700">
+    <div class="flex items-center gap-3">
+      <img src="krezzcut_logo.png" alt="KrezzCut Logo" class="h-14" />
+    </div>
+
+    <nav class="mt-4 md:mt-0 space-x-5 text-sm md:text-base">
+      <a href="#how" class="text-yellow-400 hover:text-white">How It Works</a>
+      <a href="#offer" class="text-yellow-400 hover:text-white">Offer</a>
+      <a href="#download" class="text-yellow-400 hover:text-white">Download</a>
     </nav>
   </header>
 
   <!-- Hero -->
-  <section class="text-center py-20 px-6">
-    <h2 class="text-4xl font-extrabold mb-4 gold">Get the Perfect Beard Line. Every Time.</h2>
-    <p class="max-w-xl mx-auto text-lg mb-6 text-yellow-300">
-      KrezzCut lets you scan your face and create a custom beard mold for a cleaner, sharper edge-up every time you shave.
-    </p>
+  <section class="px-6 py-14 md:py-20">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
 
-    <div class="space-x-4">
-      <a
-        href="https://apps.apple.com/us/app/krezzcut/id6760377292"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="px-6 py-3 bg-gold text-black font-bold rounded-2xl shadow inline-block hover-gold transition"
-      >
-        Download Free on iOS
-      </a>
-
-      <a
-        href="#pricing"
-        class="px-6 py-3 bg-black text-white font-bold rounded-2xl shadow inline-block border border-gold hover-gold transition"
-      >
-        View Pricing
-      </a>
-    </div>
-
-    <div class="mt-10 flex justify-center">
-      <div class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg border border-gold rounded-xl overflow-hidden">
-        <video controls autoplay muted loop playsinline class="w-full h-auto rounded-xl">
+      <!-- Video First -->
+      <div class="hero-card rounded-3xl p-4 gold-glow">
+        <video controls autoplay muted loop playsinline class="w-full rounded-2xl">
           <source src="How it works video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+      </div>
+
+      <!-- Hero Text -->
+      <div class="text-center md:text-left">
+        <p class="text-yellow-300 font-bold uppercase tracking-widest mb-3">
+          Custom beard line technology
+        </p>
+
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight gold mb-5">
+          Scan Your Face. Get a Custom Beard Mold.
+        </h1>
+
+        <p class="text-lg md:text-xl text-gray-200 mb-6">
+          KrezzCut helps you create a sharper, cleaner, more consistent beard line from home.
+          Download the app free, scan your face, choose your style, and order your custom mold.
+        </p>
+
+        <div class="bg-black border border-gold rounded-2xl p-5 mb-6 gold-glow">
+          <p class="text-2xl font-extrabold gold mb-1">50% Off Your First Mold</p>
+          <p class="text-gray-200">
+            Use code <span class="text-yellow-300 font-black">FIRSTCUT50%</span> at checkout.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center">
+          <a href="https://apps.apple.com/us/app/krezzcut/id6760377292" target="_blank" rel="noopener noreferrer">
+            <img src="app-store-badge.svg" alt="Download on the App Store" class="h-16 download-pulse rounded-xl" />
+          </a>
+
+          <a href="https://apps.apple.com/us/app/krezzcut/id6760377292"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="px-8 py-4 bg-gold text-black font-black rounded-2xl download-pulse">
+            Download Free on iOS
+          </a>
+        </div>
+
+        <p class="text-sm text-gray-400 mt-4">
+          App is free to download. Custom mold discount available for a limited time.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust / Simple Value -->
+  <section class="px-6 py-12">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-5 text-center">
+      <div class="border border-gold rounded-2xl p-6 bg-black">
+        <h3 class="gold font-bold text-xl mb-2">Custom Fit</h3>
+        <p class="text-gray-300">Made from your face scan, not a one-size-fits-all stencil.</p>
+      </div>
+
+      <div class="border border-gold rounded-2xl p-6 bg-black">
+        <h3 class="gold font-bold text-xl mb-2">Cleaner Lines</h3>
+        <p class="text-gray-300">Designed to help keep your beard line sharp and consistent.</p>
+      </div>
+
+      <div class="border border-gold rounded-2xl p-6 bg-black">
+        <h3 class="gold font-bold text-xl mb-2">Save Time</h3>
+        <p class="text-gray-300">Touch up your beard line at home between barber visits.</p>
       </div>
     </div>
   </section>
 
   <!-- How It Works -->
-  <section id="how" class="py-20 px-6">
-    <h3 class="text-3xl font-bold text-center mb-12 gold">How It Works</h3>
-    <div class="grid md:grid-cols-4 gap-8 text-center">
-      <div class="bg-black p-6 rounded-xl shadow border border-gold">
-        <div class="text-2xl font-bold text-yellow-300 mb-2">Step 1</div>
-        <div class="text-lg">Download the App</div>
+  <section id="how" class="px-6 py-16">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-center gold mb-12">How It Works</h2>
+
+    <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-6 text-center">
+      <div class="bg-black border border-gold rounded-2xl p-6">
+        <p class="text-yellow-300 font-black text-3xl mb-2">1</p>
+        <h3 class="font-bold text-xl mb-2">Download</h3>
+        <p class="text-gray-300">Get KrezzCut free on iOS.</p>
       </div>
-      <div class="bg-black p-6 rounded-xl shadow border border-gold">
-        <div class="text-2xl font-bold text-yellow-300 mb-2">Step 2</div>
-        <div class="text-lg">Scan Your Face</div>
+
+      <div class="bg-black border border-gold rounded-2xl p-6">
+        <p class="text-yellow-300 font-black text-3xl mb-2">2</p>
+        <h3 class="font-bold text-xl mb-2">Scan</h3>
+        <p class="text-gray-300">Use your iPhone to scan your face.</p>
       </div>
-      <div class="bg-black p-6 rounded-xl shadow border border-gold">
-        <div class="text-2xl font-bold text-yellow-300 mb-2">Step 3</div>
-        <div class="text-lg">Choose Your Style</div>
+
+      <div class="bg-black border border-gold rounded-2xl p-6">
+        <p class="text-yellow-300 font-black text-3xl mb-2">3</p>
+        <h3 class="font-bold text-xl mb-2">Customize</h3>
+        <p class="text-gray-300">Choose your beard style and preview your mold.</p>
       </div>
-      <div class="bg-black p-6 rounded-xl shadow border border-gold">
-        <div class="text-2xl font-bold text-yellow-300 mb-2">Step 4</div>
-        <div class="text-lg">Order Your $40 Mold</div>
+
+      <div class="bg-black border border-gold rounded-2xl p-6">
+        <p class="text-yellow-300 font-black text-3xl mb-2">4</p>
+        <h3 class="font-bold text-xl mb-2">Order</h3>
+        <p class="text-gray-300">Use FIRSTCUT50% for 50% off your first mold.</p>
       </div>
     </div>
   </section>
 
-  <!-- Why KrezzCut -->
-  <section class="py-20 px-6">
-    <h3 class="text-3xl font-bold text-center mb-12 gold">Why KrezzCut?</h3>
-    <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-      <div class="bg-black p-6 rounded-xl border border-gold">Custom-fit beard mold based on your face scan</div>
-      <div class="bg-black p-6 rounded-xl border border-gold">No more guessing or uneven beard lines</div>
-      <div class="bg-black p-6 rounded-xl border border-gold">Skip frequent barber visits for basic lineups</div>
-      <div class="bg-black p-6 rounded-xl border border-gold">Stay sharp and consistent every time</div>
+  <!-- Offer -->
+  <section id="offer" class="px-6 py-16">
+    <div class="max-w-4xl mx-auto text-center hero-card rounded-3xl p-8 md:p-12 gold-glow">
+      <h2 class="text-3xl md:text-5xl font-extrabold gold mb-4">Launch Special</h2>
+      <p class="text-xl text-gray-200 mb-6">
+        Try KrezzCut now and get 50% off your first custom beard mold.
+      </p>
+
+      <div class="inline-block bg-gold text-black font-black text-2xl md:text-3xl px-8 py-4 rounded-2xl mb-6">
+        Code: FIRSTCUT50%
+      </div>
+
+      <br />
+
+      <a href="https://apps.apple.com/us/app/krezzcut/id6760377292"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="inline-block px-10 py-4 bg-gold text-black font-black rounded-2xl download-pulse">
+        Download Free on iOS
+      </a>
+    </div>
+  </section>
+
+  <!-- Social Proof Placeholder -->
+  <section class="px-6 py-16">
+    <h2 class="text-3xl font-extrabold text-center gold mb-10">Built for Men Who Want Consistency</h2>
+
+    <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
+      <div class="bg-black border border-yellow-700 rounded-2xl p-6">
+        <p class="text-gray-300 italic">“I wanted something that helped me line up my beard without guessing every time.”</p>
+        <p class="text-yellow-300 font-bold mt-4">Early User Feedback</p>
+      </div>
+
+      <div class="bg-black border border-yellow-700 rounded-2xl p-6">
+        <p class="text-gray-300 italic">“The idea just makes sense. Scan, customize, and get something made for your face.”</p>
+        <p class="text-yellow-300 font-bold mt-4">Product Tester</p>
+      </div>
+
+      <div class="bg-black border border-yellow-700 rounded-2xl p-6">
+        <p class="text-gray-300 italic">“This is for people who care about keeping their beard line sharp between cuts.”</p>
+        <p class="text-yellow-300 font-bold mt-4">KrezzCut Community</p>
+      </div>
     </div>
   </section>
 
   <!-- Download -->
-  <section id="download" class="py-20 px-6 text-center">
-    <h3 class="text-3xl font-bold mb-4 gold">Download KrezzCut for Free</h3>
-    <p class="text-lg mb-6 text-yellow-200">
-      Get the app free on iPhone, scan your face, choose your style, and order your custom mold when you're ready.
+  <section id="download" class="px-6 py-20 text-center">
+    <h2 class="text-4xl md:text-5xl font-extrabold gold mb-4">
+      Download KrezzCut Free on iOS
+    </h2>
+
+    <p class="max-w-2xl mx-auto text-lg text-gray-300 mb-8">
+      Start with the free app. Use code FIRSTCUT50% when you are ready to order your custom beard mold.
     </p>
 
-    <a
-      href="https://apps.apple.com/us/app/krezzcut/id6760377292"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="px-8 py-3 bg-gold text-black font-bold rounded-2xl shadow inline-block hover-gold transition"
-    >
-      Download Free on iOS
-    </a>
-  </section>
+    <div class="flex flex-col items-center gap-5">
+      <a href="https://apps.apple.com/us/app/krezzcut/id6760377292" target="_blank" rel="noopener noreferrer">
+        <img src="app-store-badge.svg" alt="Download on the App Store" class="h-20 download-pulse rounded-xl" />
+      </a>
 
-  <!-- Pricing -->
-  <section id="pricing" class="py-20 px-6">
-    <h3 class="text-3xl font-bold text-center mb-12 gold">Pricing</h3>
-    <div class="max-w-2xl mx-auto text-center">
-      <div class="bg-black p-8 rounded-xl shadow border border-gold">
-        <h4 class="text-xl font-bold mb-2 text-yellow-300">Custom Beard Mold</h4>
-        <p class="mb-4">Create your scan in the app, then order a custom mold shipped to your door.</p>
-        <p class="font-semibold text-white">$40 + shipping</p>
-      </div>
+      <a href="https://apps.apple.com/us/app/krezzcut/id6760377292"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="px-10 py-4 bg-gold text-black font-black rounded-2xl download-pulse">
+        Download Free on iOS
+      </a>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="text-center py-10 border-t border-gold mt-10">
-    <div class="flex justify-center items-center mb-4">
-      <img src="krezzcut_logo.png" alt="KrezzCut Logo" class="h-10" />
-    </div>
+  <footer class="text-center py-10 border-t border-yellow-700">
+    <img src="krezzcut_logo.png" alt="KrezzCut Logo" class="h-12 mx-auto mb-4" />
     <p class="text-yellow-400 text-sm">&copy; 2026 KrezzCut. All rights reserved.</p>
-    <div class="space-x-4 text-sm mt-2">
+
+    <div class="space-x-4 text-sm mt-3">
       <a href="privacy.html" class="text-yellow-400 hover:underline">Privacy Policy</a>
       <a href="mailto:krezzcut@gmail.com" class="text-yellow-400 hover:underline">Contact</a>
     </div>
   </footer>
 
+  <!-- Sticky Mobile Download Bar -->
+  <div class="mobile-sticky fixed bottom-0 left-0 right-0 sticky-download border-t border-gold p-4 z-50">
+    <div class="flex items-center justify-between gap-3">
+      <div>
+        <p class="text-yellow-300 font-black text-sm">50% Off First Mold</p>
+        <p class="text-white text-xs">Use FIRSTCUT50%</p>
+      </div>
+
+      <a href="https://apps.apple.com/us/app/krezzcut/id6760377292"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="bg-gold text-black font-black px-5 py-3 rounded-xl text-sm">
+        Download iOS
+      </a>
+    </div>
+  </div>
+
 </body>
 </html>
+```
