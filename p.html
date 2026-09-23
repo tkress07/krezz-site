@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="referrer" content="no-referrer" />
+  <title>Open Krezzcut</title>
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --gold: #ffd700;
+      --gold-soft: #e0ba6c;
+      --text: #f7f7f7;
+      --muted: #b8b8b8;
+      --panel: rgba(18, 18, 18, 0.96);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background:
+        radial-gradient(circle at top, rgba(255, 215, 0, 0.16), transparent 38%),
+        #000;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    main {
+      width: min(100%, 520px);
+      padding: 36px 28px;
+      text-align: center;
+      background: var(--panel);
+      border: 1px solid rgba(255, 215, 0, 0.48);
+      border-radius: 28px;
+      box-shadow: 0 20px 70px rgba(0, 0, 0, 0.6);
+    }
+
+    .logo {
+      width: min(220px, 72%);
+      height: auto;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      color: var(--gold);
+      font-size: clamp(2rem, 8vw, 3rem);
+      line-height: 1.05;
+    }
+
+    p {
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .status {
+      margin: 22px 0;
+      padding: 14px 16px;
+      color: #fff2b5;
+      background: rgba(255, 215, 0, 0.08);
+      border: 1px solid rgba(255, 215, 0, 0.28);
+      border-radius: 14px;
+      font-size: 0.95rem;
+    }
+
+    .app-store-link {
+      display: inline-block;
+      margin-top: 8px;
+      border-radius: 12px;
+      outline-offset: 5px;
+    }
+
+    .app-store-link:focus-visible {
+      outline: 3px solid var(--gold-soft);
+    }
+
+    .app-store-badge {
+      display: block;
+      width: 190px;
+      max-width: 70vw;
+      height: auto;
+    }
+
+    .instruction {
+      margin-top: 20px;
+      font-size: 0.92rem;
+    }
+
+    .home-link {
+      display: inline-block;
+      margin-top: 24px;
+      color: var(--gold-soft);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .home-link:hover,
+    .home-link:focus-visible {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <img class="logo" src="/krezzcut_logo.png" alt="Krezzcut" />
+
+    <h1>Get Krezzcut</h1>
+
+    <p>
+      Krezzcut is required to continue with this stylist partner link.
+      Download the app free from the App Store.
+    </p>
+
+    <div id="partner-status" class="status" role="status">
+      Checking your partner link…
+    </div>
+
+    <a
+      class="app-store-link"
+      href="https://apps.apple.com/us/app/krezzcut/id6760377292"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Download Krezzcut on the App Store"
+    >
+      <img
+        class="app-store-badge"
+        src="/app-store-badge.png"
+        alt="Download on the App Store"
+      />
+    </a>
+
+    <p class="instruction">
+      After installing Krezzcut, scan the same stylist QR code again.
+      This page keeps the original salon and stylist information in its URL.
+    </p>
+
+    <a class="home-link" href="/">Visit Krezzcut.com</a>
+  </main>
+
+  <script>
+    (() => {
+      const parameters = new URLSearchParams(window.location.search);
+      const salonId = parameters.get("salon_id");
+      const stylistId = parameters.get("stylist_id");
+      const validId = /^[a-z0-9_]{1,100}$/;
+      const status = document.getElementById("partner-status");
+
+      if (
+        salonId &&
+        stylistId &&
+        validId.test(salonId) &&
+        validId.test(stylistId)
+      ) {
+        status.textContent = "Your stylist partner link is ready.";
+      } else {
+        status.textContent =
+          "This link is missing valid salon or stylist information. Please rescan the original QR code.";
+      }
+    })();
+  </script>
+</body>
+</html>
