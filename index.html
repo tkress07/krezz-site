@@ -68,6 +68,30 @@
         display: none;
       }
     }
+
+    /* Black Friday promotion — animated but readable */
+    .bf-banner {
+      background: linear-gradient(105deg, #171000, #493600 50%, #171000);
+      border-bottom: 2px solid #FFD700;
+      box-shadow: 0 6px 28px rgba(255, 215, 0, .18);
+    }
+    .bf-flash {
+      color: #FFD700;
+      animation: bfFlash 1.35s ease-in-out infinite;
+    }
+    @keyframes bfFlash {
+      0%, 100% { opacity: 1; text-shadow: 0 0 4px rgba(255,215,0,.2); }
+      50% { opacity: .58; text-shadow: 0 0 20px rgba(255,215,0,.85); }
+    }
+    .bf-code {
+      border: 2px dashed #FFD700;
+      background: #050505;
+      color: #FFD700;
+      letter-spacing: .08em;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .bf-flash { animation: none; }
+    }
   </style>
 </head>
 
@@ -118,6 +142,20 @@
     </nav>
   </header>
 
+
+
+  <!-- Black Friday promotion: visible near top on mobile and desktop -->
+  <aside class="bf-banner px-5 py-6 text-center" aria-label="Black Friday promotion">
+    <div class="max-w-5xl mx-auto flex flex-col items-center gap-3">
+      <p class="uppercase font-extrabold tracking-widest text-white text-sm md:text-base">KrezzCut Black Friday Special</p>
+      <p class="bf-flash text-4xl md:text-6xl font-black uppercase leading-tight">40% OFF</p>
+      <p class="text-white text-lg md:text-2xl font-bold">Your Custom Beard Mold</p>
+      <div class="bf-code rounded-xl px-6 py-3 font-black text-xl md:text-2xl" aria-label="Promo code Krezz40">USE CODE: KREZZ40</div>
+      <p class="text-gray-200 text-sm md:text-base">$24 beard mold <span aria-hidden="true">•</span> $30 with neckline</p>
+      <a href="https://apps.apple.com/us/app/krezzcut/id6760377292" target="_blank" rel="noopener noreferrer" class="inline-block bg-gold text-black font-black rounded-xl px-6 py-3 hover:bg-yellow-300">Download the Free App &amp; Order</a>
+      <p class="text-xs text-gray-300">Enter KREZZ40 at checkout. Discount applies to mold purchase; app download is free.</p>
+    </div>
+  </aside>
 
   <!-- Hero -->
   <section class="px-6 py-14 md:py-20">
@@ -175,7 +213,7 @@
           <p
             class="text-2xl font-extrabold gold mb-3"
           >
-            Custom Molds Starting at $40
+            Black Friday: Custom Molds from $24
           </p>
 
           <div class="space-y-2 text-gray-200">
@@ -184,14 +222,14 @@
               <span class="font-bold text-white">
                 Custom Beard Mold:
               </span>
-              $40
+              <s class="text-gray-400">$40</s> <strong class="gold">$24 with KREZZ40</strong>
             </p>
 
             <p>
               <span class="font-bold text-white">
                 Beard Mold + Neckline:
               </span>
-              $50
+              <s class="text-gray-400">$50</s> <strong class="gold">$30 with KREZZ40</strong>
             </p>
 
           </div>
@@ -375,7 +413,7 @@
         </h3>
 
         <p class="text-gray-300">
-          Order your custom mold starting at $40.
+          Order your custom mold starting at $24 with code KREZZ40.
         </p>
       </div>
 
@@ -396,7 +434,7 @@
       <h2
         class="text-3xl md:text-5xl font-extrabold gold mb-4"
       >
-        Simple Pricing
+        Black Friday Pricing
       </h2>
 
       <p
@@ -424,8 +462,9 @@
           <p
             class="text-5xl font-black gold"
           >
-            $40
+            <span class="text-xl text-gray-400 line-through align-middle">$40</span> $24
           </p>
+          <p class="text-sm text-gray-300 mt-2">40% off with code <strong class="gold">KREZZ40</strong></p>
         </div>
 
 
@@ -442,8 +481,9 @@
           <p
             class="text-5xl font-black gold"
           >
-            $50
+            <span class="text-xl text-gray-400 line-through align-middle">$50</span> $30
           </p>
+          <p class="text-sm text-gray-300 mt-2">40% off with code <strong class="gold">KREZZ40</strong></p>
         </div>
 
       </div>
@@ -707,13 +747,13 @@
         <p
           class="text-yellow-300 font-black text-sm"
         >
-          Custom Molds from $40
+          Black Friday: 40% OFF
         </p>
 
         <p
           class="text-white text-xs"
         >
-          Free app download
+          Code KREZZ40 · Molds from $24
         </p>
       </div>
 
